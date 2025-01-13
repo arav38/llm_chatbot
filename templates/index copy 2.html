@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Bot</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f8fa;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            font-size: 2rem;
+            border-bottom: 2px solid #007bff;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        label {
+            font-size: 1.2rem;
+            color: #333;
+            margin-right: 10px;
+            align-self: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            width: 60%;
+            max-width: 400px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .response {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 80%;
+            background-color: #e8f4ff;
+            border-left: 6px solid #007bff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .response h2 {
+            color: #0056b3;
+            font-size: 1.5rem;
+        }
+        .response p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+        .highlight {
+            background-color: #ffefc7;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AI Chat Bot</h1>
+
+    <!-- Form for submitting question -->
+    <form action="/answer" method="POST">
+        <label for="Question">Question</label>
+        <input type="text" id="Question" name="Question" placeholder="Ask me anything..." required>
+        <input type="submit" value="Generate">
+    </form>
+
+    {% if response %}
+        <!-- Display response if available -->
+        <div class="response">
+            <h2>Your Answer:</h2>
+            <p id="response-text">{{ response }}</p>
+            <div class="buttons">
+                <a href="/" style="text-decoration: none;">
+                    <button>Back to Home</button>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+
+</body>
+</html>

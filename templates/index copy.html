@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Generation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        form {
+            margin: 20px 0;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e0f7fa;
+            border: 1px solid #81d4fa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat AI Queries </h1>
+
+    <form action="/generate-blog" method="POST">
+        <label for="input_txt">Ask Your Question:</label><br>
+        <input type="text" id="input_txt" name="input_txt" placeholder="Please ask your question here" required><br><br>
+
+        
+        <input type="submit" value="Get your answer">
+    </form>
+
+    {% if response %}
+        <div class="response">
+            <h2>Generated Blog:</h2>
+            <p>{{ response }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>

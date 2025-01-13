@@ -1,0 +1,22 @@
+# Example of loosening version constraints
+sentence-transformers>=0.4.0
+uvicorn>=0.15.0
+ctransformers>=0.0.0
+langchain>=0.0.0
+python-box>=5.0.0
+streamlit>=0.88.0
+flask>=1.1.0
+langchain_community
+langchain-community
+fastapi
+langserve
+sse_starlette
+uvicorn
+asgiref
+requests
+python-multipart
+langchain-ollama
+bs4
+faiss-cpu
+chromadb
+bs4
